@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2023 at 12:29 PM
+-- Generation Time: May 24, 2023 at 12:37 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -52,18 +52,6 @@ CREATE TABLE `groups` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `groups`
---
-
-INSERT INTO `groups` (`id`, `name`, `acronym`, `user_teacher_id`, `created_at`, `updated_at`) VALUES
-(1, 'Informatics', 'IT', 2, '2023-04-06 04:11:28', '2023-04-06 04:11:28'),
-(2, 'Biology2', 'BY', 2, '2023-04-06 04:41:30', '2023-04-11 07:06:28'),
-(3, 'Cooking', 'CK', 2, '2023-04-17 07:51:42', '2023-04-17 07:51:42'),
-(4, 'Lengua', 'LG', 2, '2023-04-17 07:52:30', '2023-04-17 07:52:30'),
-(5, 'Informatica', 'IT', 2, '2023-04-17 07:53:09', '2023-04-17 07:53:09'),
-(6, 'Informatics', 'IT', 33, '2023-05-12 07:24:51', '2023-05-12 07:24:51');
-
 -- --------------------------------------------------------
 
 --
@@ -100,14 +88,6 @@ CREATE TABLE `own_tasks` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `group_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `own_tasks`
---
-
-INSERT INTO `own_tasks` (`id`, `title`, `description`, `user_id`, `group_id`) VALUES
-(8, 'HOlaaa', 'löadijfasoidjf sadf', 32, 6),
-(9, 'hola2', 'ölasdfösadg', 32, 6);
 
 -- --------------------------------------------------------
 
@@ -159,21 +139,6 @@ CREATE TABLE `student_tasks` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `student_tasks`
---
-
-INSERT INTO `student_tasks` (`id`, `name`, `description`, `img`, `student_id`, `task_id`, `mark`, `feedback`, `created_at`, `updated_at`) VALUES
-(22, 'fgh', 'sdfgh', '/data/user/0/com.example.users_login_db/cache/c80d627c-c2c5-4d24-a963-5093d3ec8c77692885291244241819.jpg', 8, 3, 0, NULL, '2023-04-11 07:29:31', '2023-04-11 07:29:31'),
-(23, 'noniii', 'falafel', '/data/user/0/com.example.users_login_db/cache/c88a53fd-6e79-445a-9992-0fe77b93acf47065652527601385822.jpg', 9, 3, 5, 'Hoalfölamdasdfs sa,f sdf lkndf aslfasdf asdfj nafHoalfölamdasdfs sa,f sdf lkndf aslfasdf asdfj nafHoalfölamdasdfs sa,f sdf lkndf aslfasdf asdfj nafHoalfölamdasdfs sa,f sdf lkndf aslfasdf asdfj nafHoalfölamdasdfs sa,f sdf lkndf aslfasdf asdfj nafHoalfölamdasdfs sa,f sdf lkndf aslfasdf asdfj naf', '2023-04-13 06:37:53', '2023-04-13 06:37:53'),
-(24, 'holaaa', 'asdfsdg', '/data/user/0/com.example.users_login_db/cache/950c8778-ed32-4633-9080-216b610111233658712043851117278.jpg', 9, 5, 0, '', '2023-04-12 09:25:31', '2023-04-14 06:43:44'),
-(25, 'zfg', 'zdfgzsdg', '/data/user/0/com.example.users_login_db/cache/d02580af-f066-435d-bb88-502b48a80ee03110766446731857474.jpg', 9, 5, 0, '', '2023-04-12 09:25:39', '2023-04-12 09:25:39'),
-(26, 'dsfg', 'afgdfg', '/data/user/0/com.example.users_login_db/cache/a40395c2-d036-4050-8641-b1cd848e22a37580782140432008255.jpg', 9, 7, 0, '', '2023-04-13 06:43:05', '2023-04-17 10:27:50'),
-(27, 'cvfvdfv', 'xvvfvfv', '/data/user/0/com.example.users_login_db/cache/c80d627c-c2c5-4d24-a963-5093d3ec8c77692885291244241819.jpg', 9, 2, 0, '', '2023-04-14 05:09:44', '2023-04-14 05:09:44'),
-(29, 'Ya he cocinado cosas', 'Para hacer esta tarea he tenido que hacer muchas cosas como cocinara y esas vainas jejeje.', '/data/user/0/com.example.users_login_db/cache/c80d627c-c2c5-4d24-a963-5093d3ec8c77692885291244241819.jpg', 9, 8, 5, 'Muy bien hecho!!', '2023-04-19 03:55:26', '2023-04-19 04:18:59'),
-(31, 'fghjfghj', 'fghjfghj', '/data/user/0/com.example.users_login_db/cache/-task.jpg', 9, 11, 0, NULL, '2023-04-25 07:30:58', '2023-04-25 07:30:58'),
-(32, 'gnkjfngd', 'dfhfgmhflgmh äfdgh', '/data/user/0/com.example.users_login_db/cache/04ef2686-ce7a-4b28-bd25-0e583b13ca3f6609406175737893195.jpg', 32, 12, 4, 'cvnjvcbncv bn vcgjb cvb', '2023-05-12 09:30:05', '2023-05-12 07:30:53');
-
 -- --------------------------------------------------------
 
 --
@@ -190,25 +155,6 @@ CREATE TABLE `tasks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `tasks`
---
-
-INSERT INTO `tasks` (`id`, `title`, `description`, `date_end`, `user_teacher_id`, `group_id`, `created_at`, `updated_at`) VALUES
-(1, 'Create html2', 'ölfaösd fjasödf jsadfj sadgjkasdhglasjkd fjkas ldkfj askjdgkjsdg asdf', '2023-04-13', 2, 1, '2023-04-06 04:19:52', '2023-04-06 04:20:17'),
-(2, 'fdgjdfg', 'jdfgjdfghj', '2023-04-21', 2, 1, '2023-04-06 04:35:37', '2023-04-06 04:35:37'),
-(3, 'lkasndflnsad2', 'klsadnölskadnfskladfnöskla d', '2023-04-13', 2, 2, '2023-04-06 04:42:14', '2023-04-06 04:42:28'),
-(4, 'fhsuiafhsiaudh', 'iosjdgöoifjd gösdjf gölskd fgjskld fö df gsdfg', '2023-04-15', 2, 1, '2023-04-11 04:04:25', '2023-04-11 04:04:25'),
-(5, 'ghjfghj', 'gdhjfghjfgh', '2023-04-14', 2, 2, '2023-04-12 06:30:33', '2023-04-12 06:30:33'),
-(6, 'jhlghjkl', 'ghjlghjlg', '2023-04-05', 2, 2, '2023-04-12 06:30:40', '2023-04-12 06:30:40'),
-(7, 'yeyeyeyyeyeyee', 'fkjasd fjasd fjasdlk jöaskld öfakl jöskld jölaskdfjsklödfjasö lkjfdökl jas ghu dfj nkg', '2023-04-28', 2, 2, '2023-04-13 04:40:16', '2023-04-13 04:40:16'),
-(8, 'Cocinar', 'Hay que cocinar cosas', '2023-04-23', 2, 3, '2023-04-18 03:49:00', '2023-04-18 03:49:00'),
-(9, 'Hornear', 'Hay que hornear cosas', '2023-05-05', 2, 3, '2023-04-18 03:49:19', '2023-04-25 07:18:25'),
-(10, 'Precalentar', 'Hay que precalentar cosas', '2023-04-13', 2, 3, '2023-04-18 03:49:46', '2023-04-18 07:02:47'),
-(11, 'hjkgh', 'jkghjkghjk', '2023-05-04', 2, 3, '2023-04-25 07:30:37', '2023-04-25 07:30:37'),
-(12, 'Make a website', 'diof sdflskdn glkfj gdölk fnsdölf gs', '2023-05-25', 33, 6, '2023-05-12 07:27:00', '2023-05-12 07:27:00'),
-(13, 'llkfdndfg', 'hdfghdfj', '2023-05-23', 33, 6, '2023-05-12 07:32:15', '2023-05-12 07:33:26');
 
 -- --------------------------------------------------------
 
@@ -228,19 +174,6 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `rol`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Pepe', 'pepe@gmail.com', NULL, '$2y$10$MbEM5/aelYW/adDAdnn5wuTTVo9zrK7oaiUJzBwH0H2MMbOCvPsiC', 'teacher', NULL, '2023-04-06 04:09:18', '2023-04-06 04:09:18'),
-(8, 'Paco', 'paco@gmail.com', NULL, '$2y$10$YEEez.HhaxcY.c1YjudP/eaoT5EIypQ2xXsCRFrTrpmfCxTuBTzNq', 'alumn', NULL, '2023-04-11 07:15:47', '2023-04-11 07:15:47'),
-(9, 'Pau', 'pau@gmail.com', NULL, '$2y$10$OoHl..dImU1/995FBfe3xe0uuS9yi33Ch0hC/UEUajMaETDeaO7Gq', 'alumn', NULL, '2023-04-12 06:52:00', '2023-04-12 06:52:00'),
-(30, '24', '24@gmail.com', NULL, '$2y$10$tlXtpIEPgVLBFGjzCPmA4O3RaBTzUIouBJIs0GxuvYoAdCUKmnwJG', 'alumn', NULL, '2023-04-21 06:02:08', '2023-04-21 06:02:08'),
-(31, 'Jose Enrique', 'josepe@gmail.com', NULL, '$2y$10$SVwG9r7.04ZR9EaINvvamuubPbmC9/PU3oHgMaup9YH/4Xf8za7Ty', 'alumn', NULL, '2023-04-21 06:10:28', '2023-04-21 06:10:28'),
-(32, 'hey', 'hey@gmail.com', NULL, '$2y$10$CXqLwcwevd3NDCgFla6R6.66XxvU7eOoO/9EVmw9QoI3uguQLcEyW', 'alumn', NULL, '2023-05-12 09:18:23', '2023-05-12 09:18:23'),
-(33, 'heidi', 'heidi@gmail.com', NULL, '$2y$10$oxJLja0Q/b6pZ0ypAYKuj.E5kloP4/5UtSVA408Q0ben70YVkATJ6', 'teacher', NULL, '2023-05-12 07:24:01', '2023-05-12 07:24:01');
-
 -- --------------------------------------------------------
 
 --
@@ -251,22 +184,6 @@ CREATE TABLE `user_group` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `groups_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `user_group`
---
-
-INSERT INTO `user_group` (`user_id`, `groups_id`) VALUES
-(2, 2),
-(2, 3),
-(2, 4),
-(2, 5),
-(8, 2),
-(9, 1),
-(9, 2),
-(9, 3),
-(32, 6),
-(33, 6);
 
 --
 -- Indexes for dumped tables
