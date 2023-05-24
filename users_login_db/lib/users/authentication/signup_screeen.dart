@@ -23,7 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         title: Text("SignUp"),
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Colors.green.shade500,
+        backgroundColor: Color(0xFF1C8750),
       ),
       body: const MyStatefulWidget(),
     );
@@ -233,7 +233,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(450, 20),
                         foregroundColor: Colors.white,
-                        backgroundColor: Colors.green.shade800,
+                        backgroundColor: Color(0xFF1C8750),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32.0),
                         ),
@@ -252,7 +252,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 TextButton(
                   child: const Text(
                     'Login',
-                    style: TextStyle(fontSize: 20, color: Colors.green),
+                    style: TextStyle(fontSize: 20, color: Color(0xFF1C8750)),
                   ),
                   onPressed: () {
                     Get.to(LoginScreen());
