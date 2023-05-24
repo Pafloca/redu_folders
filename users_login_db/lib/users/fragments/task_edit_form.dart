@@ -133,7 +133,7 @@ class _TaskEditFormState extends State<TaskEditForm> {
     print(widget.idTaskStudent);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green.shade500,
+        backgroundColor: Color(0xFF1C8750),
         centerTitle: true,
         title: Text("Edit Task"),
       ),
@@ -191,7 +191,7 @@ class _TaskEditFormState extends State<TaskEditForm> {
                 ElevatedButton(
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.black,
-                    backgroundColor: Colors.green.shade500,
+                    backgroundColor: Color(0xFF1C8750),
                     side: BorderSide(
                       width: 2,
                       color: Colors.black,

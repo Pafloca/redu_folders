@@ -91,7 +91,7 @@ class TasksScreen extends StatelessWidget {
           return Scaffold(
               appBar: AppBar(
                 centerTitle: true,
-                backgroundColor: Colors.green.shade500,
+                backgroundColor: Color(0xFF1C8750),
                 title: const Text("Tasks"),
                 automaticallyImplyLeading: false,
                 leading: IconButton(
@@ -101,9 +101,16 @@ class TasksScreen extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back),
                 ),
               ),
-              resizeToAvoidBottomInset: false,
-              body: SingleChildScrollView(
-                child: Column(
+              resizeToAvoidBottomInset: true,
+              body: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("images/redulogo.png"),
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                child:SingleChildScrollView(
+                  child: Column(
                   children: <Widget>[
                   for (var i = 0; i < tasks.length; i++)
                     if(dateBefore(tasks[i].date_end) &&
@@ -115,6 +122,7 @@ class TasksScreen extends StatelessWidget {
                       else
                         cuadro(tasks[i], context)
                 ],
+                  ),
                 ),
               ));
         }),
@@ -131,21 +139,10 @@ Widget cuadro3(Task task, context) {
       Container(
         decoration: BoxDecoration(
           color: Colors.red,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: Colors.black,
-            width: 2,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 5,
-              offset: Offset(0, 3),
-            ),
-          ],
+          borderRadius: BorderRadius.all(Radius.zero),border: Border.all(style: BorderStyle.solid),
         ),
-        margin: const EdgeInsets.all(20.0),
-        padding: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.only(top: 15,bottom: 15),
+        padding: const EdgeInsets.all(5.0),
         width: double.infinity,
         height: 200,
         child: InkWell(
@@ -200,26 +197,14 @@ Widget cuadro3(Task task, context) {
 
 Widget cuadro2(Task task, int idTaskStudent, context) {
   return Column(
-  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[
       Container(
         decoration: BoxDecoration(
-          color: Colors.green,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: Colors.black,
-            width: 2,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 5,
-              offset: Offset(0, 3),
-            ),
-          ],
+          color: Color(0xFF1C8750),
+          borderRadius: BorderRadius.all(Radius.zero),border: Border.all(style: BorderStyle.solid),
         ),
-        margin: const EdgeInsets.all(20.0),
-        padding: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.only(top: 15,bottom: 15),
+        padding: const EdgeInsets.all(5.0),
         width: double.infinity,
         height: 200,
         child: InkWell(
@@ -286,21 +271,10 @@ Widget cuadro(Task task, context) {
       Container(
         decoration: BoxDecoration(
           color: Colors.yellow,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: Colors.black,
-            width: 2,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 5,
-              offset: Offset(0, 3),
-            ),
-          ],
+          borderRadius: BorderRadius.all(Radius.zero),border: Border.all(style: BorderStyle.solid),
         ),
-        margin: const EdgeInsets.all(20.0),
-        padding: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.only(top: 15,bottom: 15),
+        padding: const EdgeInsets.all(5.0),
         width: double.infinity,
         height: 200,
         child: InkWell(

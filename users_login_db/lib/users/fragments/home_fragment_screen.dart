@@ -51,14 +51,27 @@ class HomeFragmentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     grupos = [];
     return SafeArea(
-      child: Center(
-
-        child: FutureBuilder(
-            future: showGroups(),
-            builder: ((context, snapshot) {
-              return Scaffold(
-                resizeToAvoidBottomInset: true,
-                body: Wrap(
+      child: Scaffold(
+        appBar: AppBar(
+        backgroundColor: Color(0xFF1C8750),
+        centerTitle: true,
+        title: Text("Groups"),
+      ),
+          resizeToAvoidBottomInset: true,
+          body: Container(
+                child: FutureBuilder(
+                  future: showGroups(),
+                  builder: ((context, snapshot) {
+                  return Scaffold(
+                    backgroundColor: Color(0xFFFFFFFF),
+                  resizeToAvoidBottomInset: true,
+                  body: Container(
+                      decoration: BoxDecoration(
+                      image: DecorationImage(
+                      image: AssetImage('images/redulogo.png'),
+                    ),
+                    ),
+                    child: Wrap(
                   spacing: 1.0,
                   runSpacing: 1.0,
                   children: <Widget>[
@@ -77,42 +90,39 @@ class HomeFragmentScreen extends StatelessWidget {
                             child: Text(
                               'You don\'t have any GROUP!',
                               style: TextStyle(
-                                fontSize: 22,
+                                fontSize: 23,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
-                          height: 627,
+                          alignment: Alignment.center,
+                          height: 675,
                         ),
                       ),
                   ],
-                ),
+                    ),
+                  ),
               );
             })),
-      ),
+          ),
+        ),
     );
   }
 
 
   Widget cuadro(Group grupo, context) {
     return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.all(18.0),
+            margin: const EdgeInsets.all(27.2),
             width: 150,
             height: 60,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(51),
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0DE409),
-                  Color(0x920DE409),
-                  Color(0xFF0DE409),
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
+              borderRadius: BorderRadius.zero,
+             color:Color(0xFF1C8750),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.5),
@@ -145,7 +155,7 @@ class HomeFragmentScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.zero,
                   side: BorderSide(
                     color: Colors.black.withOpacity(0.5),
                     width: 3,

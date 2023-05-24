@@ -1,6 +1,6 @@
 class API {
-  //static const hostConnect = "http://192.168.16.52/api_user";
-  static const hostConnect = "https://ddaw-pau.000webhostapp.com/api_user";
+  static const hostConnect = "http://192.168.16.52/api_user";
+  //static const hostConnect = "https://ddaw-pau.000webhostapp.com/api_user";
   static const hostConnectUser = "$hostConnect/user";
 
   static const validateEmail = "$hostConnect/user/validate_email.php";
@@ -14,4 +14,7 @@ class API {
   static const getAlumnTask = "$hostConnect/task/getAlumnTask.php";
   static const profilePhoto = "$hostConnect/user/profilePhoto.php";
   static const profilePhoto2 = "$hostConnect/user/profilePhoto2.php";
+  static const ownTasks = "$hostConnect/task/ownTask.php";
+  static const deleteTask = "$hostConnect/task/deleteTask.php";
+  static const addOwnTask = "$hostConnect/task/ownTaskSave.php";
 }

@@ -109,7 +109,7 @@ class _TaskFormState extends State<TaskForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green.shade500,
+        backgroundColor: Color(0xFF1C8750),
         centerTitle: true,
         title: const Text('Make Task'),
       ),
@@ -167,7 +167,7 @@ class _TaskFormState extends State<TaskForm> {
                 ElevatedButton(
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.black,backgroundColor: 
-                    Colors.green.shade500, 
+                    Color(0xFF1C8750), 
                     side: BorderSide(width: 2,
                       color: Colors.black,
                     ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:users_login_db/users/fragments/home_fragment_screen.dart';
+import 'package:users_login_db/users/fragments/own_tasks_screen.dart';
 import 'package:users_login_db/users/fragments/profile_fragment_screen.dart';
 import 'package:users_login_db/users/userPreferences/current_user.dart';
 
@@ -10,6 +11,7 @@ class DashboardOfFragments extends StatelessWidget {
 
   List<Widget> _fragmentScreens = [
     HomeFragmentScreen(),
+    OwnTasksScreen(),
     ProfileFragmentScreen(),
   ];
 
@@ -17,6 +19,10 @@ class DashboardOfFragments extends StatelessWidget {
     {
       "icon": Icons.home,
       "label": "Home",
+    },
+    {
+      "icon": Icons.task,
+      "label": "Tasks",
     },
     {
       "icon": Icons.person,
@@ -51,21 +57,21 @@ class DashboardOfFragments extends StatelessWidget {
             ),
             child: Obx(
                   () => BottomNavigationBar(
-                backgroundColor: Colors.green.shade200,
+                backgroundColor: Color(0xFF1C8750),
                 currentIndex: _indexNumber.value,
                 onTap: (value) {
                   _indexNumber.value = value;
                 },
                 showSelectedLabels: true,
                 showUnselectedLabels: true,
-                selectedItemColor: Colors.black,
+                selectedItemColor: Color.fromARGB(255, 255, 255, 255),
                 iconSize: 24,
-                unselectedItemColor: Colors.white,
-                items: List.generate(2, (index) {
+                unselectedItemColor: Color.fromARGB(255, 0, 0, 0),
+                items: List.generate(3, (index) {
                   var navBtnProperty = _navigationButtonsProperties[index];
                   return BottomNavigationBarItem(
                     backgroundColor: Colors.black,
-                    icon: Icon(navBtnProperty["icon"], color: Colors.black),
+                    icon: Icon(navBtnProperty["icon"], color: Color.fromARGB(255, 0, 0, 0), shadows: [Shadow(color: Colors.white,blurRadius: 15)],),
                     label: navBtnProperty["label"],
                   );
                 }),
